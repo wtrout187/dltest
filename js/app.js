@@ -21,8 +21,11 @@ class DLTestApp {
       // Load initial data
       await this.loadInitialData();
 
-      // Check if first time user
-      const isFirstTime = !localStorage.getItem('dltest_visited');
+      // Check if first time user (add ?skip=1 to URL to bypass welcome)
+      const urlParams = new URLSearchParams(window.location.search);
+      const skipWelcome = urlParams.get('skip') === '1';
+      const isFirstTime = !localStorage.getItem('dltest_visited') && !skipWelcome;
+
       if (isFirstTime) {
         this.showWelcomeScreen();
       } else {
@@ -403,7 +406,7 @@ class DLTestApp {
     if (welcomeScreen) {
       welcomeScreen.style.display = 'flex';
 
-      // Setup welcome scr', wbuttons
+      // Setup welcome screen buttons
       const startLearning = document.getElementById('startLearning');
       const showInstructions = document.getElementById('showInstructions');
 
