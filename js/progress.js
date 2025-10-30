@@ -12,7 +12,7 @@ class ProgressTracker {
     // Listen to state changes
     if (window.State) {
       window.State.on('question:answered', (data) => this.updateProgress(data));
-      windoon('session:ended', (data) => this.updateSessionStats(data));
+      window.State.on('session:ended', (data) => this.updateSessionStats(data));
     }
 
     this.isInitialized = true;
