@@ -23,6 +23,17 @@ Screenshot*
 *.sh
 *.bat
 
+# Test files
+*-test.html
+test-*.html
+debug-*.html
+works.html
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
 # Dependencies
 node_modules/
 npm-debug.log*
