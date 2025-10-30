@@ -133,6 +133,9 @@ class DLTestApp {
 
     // Update readiness score
     this.updateReadinessScore(userData);
+
+    // Update progress summary
+    this.updateProgressSummary();
   }
 
   getXPForLevel(level) {
@@ -174,6 +177,50 @@ class DLTestApp {
     if (readinessMessage) readinessMessage.textContent = message;
   }
 
+  updateProgressSummary() {
+    const progress = window.State?.getProgress();
+    if (!progress) return;
+
+    const weakAreasCount = document.getElementById('weakAreasCount');
+    const masteredCount = document.getElementById('masteredCount');
+    const categoriesStudied = document.getElementById('categoriesStudied');
+    const weakAreasList = document.getElementById('weakAreasList');
+    const weakAreasTags = document.getElementById('weakAreasTags');
+
+    // Update counts
+    if (weakAreasCount) weakAreasCount.textContent = progress.weakAreas.length;
+    if (masteredCount) masteredCount.textContent = progress.masteredTopics.length;
+
+    // Count categories with at least 3 questions answered
+    const studiedCategories = Object.keys(progress.categories).filter(cat =>
+      progress.categories[cat].total >= 3
+    ).length;
+    if (categoriesStudied) categoriesStudied.textContent = `${studiedCategories}/9`;
+
+    // Show weak areas if any exist
+    if (weakAreasList && weakAreasTags) {
+      if (progress.weakAreas.length > 0) {
+        weakAreasList.style.display = 'block';
+        weakAreasTags.innerHTML = '';
+
+        progress.weakAreas.forEach(area => {
+          const tag = document.createElement('span');
+          tag.className = 'weak-area-tag';
+          tag.textContent = this.formatCategoryName(area);
+          weakAreasTags.appendChild(tag);
+        });
+      } else {
+        weakAreasList.style.display = 'none';
+      }
+    }
+  }
+
+  formatCategoryName(category) {
+    return category.split('-').map(word =>
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
+
   showScreen(screenName) {
     // Hide all screens
     const screens = document.querySelectorAll('.screen');
@@ -200,20 +247,44 @@ class DLTestApp {
 
   startMockTest() {
     console.log('Starting mock test...');
-    // TODO: Implement mock test functionality
-    this.showNotification('Mock test coming soon!', 'info');
+    this.showScreen('study');
+    // Initialize mock test session (25 questions, mixed categories)
+    if (window.Questions) {
+      window.Questions.startStudySession({
+        count: 25,
+        mode: 'mock-test'
+      });
+    }
   }
 
   showWeakAreas() {
     console.log('Showing weak areas...');
-    // TODO: Implement weak areas functionality
-    this.showNotification('Weak areas analysis coming soon!', 'info');
+    const progress = window.State?.getProgress();
+    if (!progress || progress.weakAreas.length === 0) {
+      this.showNotification('No weak areas identified yet. Keep practicing!', 'info');
+      return;
+    }
+
+    this.showScreen('study');
+    // Initialize weak areas session
+    if (window.Questions) {
+      window.Questions.startStudySession({
+        count: 15,
+        mode: 'weak-areas'
+      });
+    }
   }
 
   showRoadSigns() {
     console.log('Showing road signs...');
-    // TODO: Implement road signs functionality
-    this.showNotification('Road signs practice coming soon!', 'info');
+    this.showScreen('study');
+    // Initialize road signs session
+    if (window.Questions) {
+      window.Questions.startStudySession({
+        count: 20,
+        mode: 'road-signs'
+      });
+    }
   }
 
   showNotification(message, type = 'info') {

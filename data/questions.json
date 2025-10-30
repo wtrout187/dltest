@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "lastUpdated": "2024-12-08",
-  "totalQuestions": 25,
+  "totalQuestions": 75,
   "categories": [
     "traffic-signs",
     "right-of-way",
@@ -437,6 +437,856 @@
       "correct": 1,
       "explanation": "A flashing red light should be treated as a stop sign - come to a complete stop and proceed when safe.",
       "reference": "SD Manual Ch.4, P.27",
+      "image": null
+    },
+    {
+ "id": 26,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a pentagon-shaped sign indicate?",
+      "options": [
+        "School zone",
+        "Hospital zone",
+        "Construction zone",
+        "Residential zone"
+      ],
+      "correct": 0,
+      "explanation": "Pentagon-shaped signs are used for school zones and school crossings.",
+      "reference": "SD Manual Ch.3, P.21",
+      "image": null
+    },
+    {
+      "id": 27,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When driving at night, you should dim your headlights when within how many feet of an oncoming vehicle?",
+      "options": [
+        "300 feet",
+        "400 feet",
+        "500 feet",
+        "600 feet"
+      ],
+      "correct": 2,
+      "explanation": "Dim your headlights when within 500 feet of an oncoming vehicle to avoid blinding the other driver.",
+      "reference": "SD Manual Ch.7, P.63",
+      "image": null
+    },
+    {
+      "id": 28,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the minimum age to get a learner's permit in South Dakota?",
+      "options": [
+        "14 years old",
+        "15 years old",
+        "16 years old",
+        "17 years old"
+      ],
+      "correct": 0,
+      "explanation": "In South Dakota, you can get a learner's permit at age 14.",
+      "reference": "SD Manual Ch.1, P.5",
+      "image": null
+    },
+    {
+      "id": 29,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When two vehicles arrive at an uncontrolled intersection at the same time, who has the right of way?",
+      "options": [
+        "The vehicle on the left",
+        "The vehicle on the right",
+        "The larger vehicle",
+        "The faster vehicle"
+      ],
+      "correct": 1,
+      "explanation": "When two vehicles arrive simultaneously at an uncontrolled intersection, the vehicle on the right has the right of way.",
+      "reference": "SD Manual Ch.4, P.24",
+      "image": null
+    },
+    {
+      "id": 30,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "You cannot park within how many feet of a stop sign?",
+      "options": [
+        "15 feet",
+        "20 feet",
+        "25 feet",
+        "30 feet"
+      ],
+      "correct": 3,
+      "explanation": "You cannot park within 30 feet of a stop sign to ensure visibility for other drivers.",
+      "reference": "SD Manual Ch.6, P.48",
+      "image": null
+    },
+    {
+      "id": 31,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the speed limit in business districts unless otherwise posted?",
+      "options": [
+        "20 mph",
+        "25 mph",
+        "30 mph",
+        "35 mph"
+      ],
+      "correct": 1,
+      "explanation": "The speed limit in business districts is 25 mph unless otherwise posted.",
+      "reference": "SD Manual Ch.5, P.34",
+      "image": null
+    },
+    {
+      "id": 32,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What color are construction zone signs?",
+      "options": [
+        "Yellow",
+        "Orange",
+        "Red",
+        "Blue"
+      ],
+      "correct": 1,
+      "explanation": "Construction zone signs are orange to alert drivers to work zones and temporary conditions.",
+      "reference": "SD Manual Ch.3, P.22",
+      "image": null
+    },
+    {
+      "id": 33,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "How far must you stay behind an emergency vehicle with flashing lights?",
+      "options": [
+        "100 feet",
+        "200 feet",
+        "300 feet",
+        "500 feet"
+      ],
+      "correct": 3,
+      "explanation": "You must stay at least 500 feet behind an emergency vehicle with flashing lights.",
+      "reference": "SD Manual Ch.7, P.60",
+      "image": null
+    },
+    {
+      "id": 34,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When making a right turn on red, you must:",
+      "options": [
+        "Turn immediately if clear",
+        "Come to a complete stop first",
+        "Yield to pedestrians only",
+        "Wait for the green light"
+      ],
+      "correct": 1,
+      "explanation": "When making a right turn on red, you must come to a complete stop and yield to all traffic and pedestrians before turning.",
+      "reference": "SD Manual Ch.4, P.29",
+      "image": null
+    },
+    {
+      "id": 35,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When should you use your hazard lights?",
+      "options": [
+        "When parking illegally",
+        "When your vehicle is disabled",
+        "When driving slowly",
+        "When it's raining"
+      ],
+      "correct": 1,
+      "explanation": "Use hazard lights when your vehicle is disabled or stopped on the roadway to warn other drivers.",
+      "reference": "SD Manual Ch.7, P.65",
+      "image": null
+    },
+    {
+      "id": 36,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a green circular sign with a white arrow mean?",
+      "options": [
+        "Turn required",
+        "Turn permitted",
+        "No turn allowed",
+        "Yield before turning"
+      ],
+      "correct": 1,
+      "explanation": "A green circular sign with a white arrow indicates that the turn shown is permitted.",
+      "reference": "SD Manual Ch.3, P.23",
+      "image": null
+    },
+    {
+      "id": 37,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the penalty for a first-time DUI conviction in South Dakota?",
+      "options": [
+        "License suspension only",
+        "Fine only",
+        "License suspension and fine",
+        "Jail time only"
+      ],
+      "correct": 2,
+      "explanation": "A first-time DUI conviction results in both license suspension and a fine, plus possible jail time.",
+      "reference": "SD Manual Ch.8, P.70",
+      "image": null
+    },
+    {
+      "id": 38,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What should you do when approaching a yellow traffic light?",
+      "options": [
+        "Speed up to get through",
+        "Stop if you can do so safely",
+        "Always stop immediately",
+        "Ignore it and continue"
+      ],
+      "correct": 1,
+      "explanation": "When approaching a yellow light, stop if you can do so safely. If you cannot stop safely, proceed with caution.",
+      "reference": "SD Manual Ch.4, P.26",
+      "image": null
+    },
+    {
+      "id": 39,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When parallel parking, your vehicle should be within how many inches of the curb?",
+      "options": [
+        "6 inches",
+        "12 inches",
+        "18 inches",
+        "24 inches"
+      ],
+      "correct": 1,
+      "explanation": "When parallel parking, your vehicle should be within 12 inches of the curb.",
+      "reference": "SD Manual Ch.6, P.50",
+      "image": null
+    },
+    {
+      "id": 40,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What is the maximum speed limit on rural highways in South Dakota?",
+      "options": [
+        "65 mph",
+        "70 mph",
+        "75 mph",
+        "80 mph"
+      ],
+      "correct": 2,
+      "explanation": "The maximum speed limit on rural highways in South Dakota is 75 mph unless otherwise posted.",
+      "reference": "SD Manual Ch.5, P.35",
+      "image": null
+    },
+    {
+      "id": 41,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a brown sign typically indicate?",
+      "options": [
+        "Construction zone",
+        "Recreation area",
+        "Hospital",
+        "School zone"
+      ],
+      "correct": 1,
+      "explanation": "Brown signs indicate recreational areas, parks, and points of interest.",
+      "reference": "SD Manual Ch.3, P.24",
+      "image": null
+    },
+    {
+      "id": 42,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What should you do if an ambulance is approaching from behind?",
+      "options": [
+        "Speed up",
+        "Pull to the right and stop",
+        "Pull to the left and stop",
+        "Continue driving normally"
+      ],
+      "correct": 1,
+      "explanation": "Pull to the right side of the road and stop to allow the ambulance to pass safely.",
+      "reference": "SD Manual Ch.7, P.61",
+      "image": null
+    },
+    {
+      "id": 43,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "Who has the right of way when a vehicle is entering a highway from an acceleration lane?",
+      "options": [
+        "The entering vehicle",
+        "Vehicles already on the highway",
+        "The larger vehicle",
+        "Whoever arrives first"
+      ],
+      "correct": 1,
+      "explanation": "Vehicles already on the highway have the right of way. Entering vehicles must yield and merge safely.",
+      "reference": "SD Manual Ch.4, P.36",
+      "image": null
+    },
+    {
+      "id": 44,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is hydroplaning?",
+      "options": [
+        "Skidding on ice",
+        "Losing traction on wet roads",
+        "Sliding on gravel",
+        "Spinning out on curves"
+      ],
+      "correct": 1,
+      "explanation": "Hydroplaning occurs when your tires lose contact with the road surface due to water, causing loss of traction and control.",
+      "reference": "SD Manual Ch.7, P.66",
+      "image": null
+    },
+    {
+      "id": 45,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a sign with a red circle and diagonal line mean?",
+      "options": [
+        "Warning",
+        "Information",
+        "Prohibition",
+        "Direction"
+      ],
+      "correct": 2,
+      "explanation": "A red circle with a diagonal line is a prohibition sign, indicating something is not allowed.",
+      "reference": "SD Manual Ch.3, P.25",
+      "image": null
+    },
+    {
+      "id": 46,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "How long is a driver's license valid in South Dakota?",
+      "options": [
+        "3 years",
+        "4 years",
+        "5 years",
+        "6 years"
+      ],
+      "correct": 2,
+      "explanation": "A South Dakota driver's license is valid for 5 years from the date of issue.",
+      "reference": "SD Manual Ch.1, P.8",
+      "image": null
+    },
+    {
+      "id": 47,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a flashing yellow light mean?",
+      "options": [
+        "Stop",
+        "Proceed with caution",
+        "Yield",
+        "Speed up"
+      ],
+      "correct": 1,
+      "explanation": "A flashing yellow light means proceed with caution and be prepared to yield.",
+      "reference": "SD Manual Ch.4, P.28",
+      "image": null
+    },
+    {
+      "id": 48,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "You cannot park within how many feet of a railroad crossing?",
+      "options": [
+        "25 feet",
+        "50 feet",
+        "75 feet",
+        "100 feet"
+      ],
+      "correct": 1,
+      "explanation": "You cannot park within 50 feet of a railroad crossing to ensure clear visibility and safe passage.",
+      "reference": "SD Manual Ch.6, P.51",
+      "image": null
+    },
+    {
+      "id": 49,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When must you reduce your speed below the posted limit?",
+      "options": [
+        "Never",
+        "Only in bad weather",
+        "When conditions require it",
+        "Only at night"
+      ],
+      "correct": 2,
+      "explanation": "You must reduce speed below the posted limit when road, weather, or traffic conditions require it for safety.",
+      "reference": "SD Manual Ch.5, P.36",
+      "image": null
+    },
+    {
+      "id": 50,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What shape are most warning signs?",
+      "options": [
+        "Circular",
+        "Rectangular",
+        "Diamond",
+        "Triangular"
+      ],
+      "correct": 2,
+      "explanation": "Most warning signs are diamond-shaped with yellow backgrounds to alert drivers to potential hazards.",
+      "reference": "SD Manual Ch.3, P.26",
+      "image": null
+    },
+    {
+      "id": 51,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When must you move over for emergency vehicles stopped on the roadside?",
+      "options": [
+        "Only on highways",
+        "Only during the day",
+        "On all roads when safe to do so",
+        "Never required"
+      ],
+      "correct": 2,
+      "explanation": "South Dakota's Move Over Law requires drivers to change lanes or slow down when passing emergency vehicles stopped on any roadway.",
+      "reference": "SD Manual Ch.7, P.62",
+      "image": null
+    },
+    {
+      "id": 52,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When turning left from a two-way street onto a one-way street, you should turn into:",
+      "options": [
+        "Any available lane",
+        "The left lane",
+        "The right lane",
+        "The center lane"
+      ],
+      "correct": 1,
+      "explanation": "When turning left onto a one-way street, turn into the left lane closest to your previous direction of travel.",
+      "reference": "SD Manual Ch.4, P.31",
+      "image": null
+    },
+    {
+      "id": 53,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What should you do if your brakes fail while driving?",
+      "options": [
+        "Turn off the engine",
+        "Pump the brake pedal",
+        "Pull the parking brake hard",
+        "Shift to neutral"
+      ],
+      "correct": 1,
+      "explanation": "If your brakes fail, pump the brake pedal rapidly to build up brake pressure, then use the parking brake gradually.",
+      "reference": "SD Manual Ch.7, P.68",
+      "image": null
+    },
+    {
+      "id": 54,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a blue sign typically indicate?",
+      "options": [
+        "Warning",
+        "Services for motorists",
+        "Construction",
+        "Speed limit"
+      ],
+      "correct": 1,
+      "explanation": "Blue signs provide information about services for motorists such as gas, food, and lodging.",
+      "reference": "SD Manual Ch.3, P.27",
+      "image": null
+    },
+    {
+      "id": 55,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the implied consent law?",
+      "options": [
+        "You consent to follow traffic laws",
+        "You consent to chemical testing if arrested for DUI",
+        "You consent to vehicle searches",
+        "You consent to traffic stops"
+      ],
+      "correct": 1,
+      "explanation": "Implied consent means that by driving, you automatically consent to chemical testing if arrested for DUI.",
+      "reference": "SD Manual Ch.8, P.71",
+      "image": null
+    },
+    {
+      "id": 56,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When making a U-turn, you should:",
+      "options": [
+        "Make it as quickly as possible",
+        "Check for 'No U-turn' signs first",
+        "Only do it at intersections",
+        "Always use your hazard lights"
+      ],
+      "correct": 1,
+      "explanation": "Before making a U-turn, check for 'No U-turn' signs and ensure it's legal and safe to do so.",
+      "reference": "SD Manual Ch.4, P.32",
+      "image": null
+    },
+    {
+      "id": 57,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "When parking uphill with a curb, you should:",
+      "options": [
+        "Turn wheels toward the curb",
+        "Turn wheels away from the curb",
+        "Leave wheels straight",
+        "Set the parking brake only"
+      ],
+      "correct": 1,
+      "explanation": "When parking uphill with a curb, turn your wheels away from the curb so the vehicle will roll into the curb if it moves.",
+      "reference": "SD Manual Ch.6, P.52",
+      "image": null
+    },
+    {
+      "id": 58,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the speed limit in alleys?",
+      "options": [
+        "10 mph",
+        "15 mph",
+        "20 mph",
+        "25 mph"
+      ],
+      "correct": 1,
+      "explanation": "The speed limit in alleys is 15 mph to ensure safety in these narrow spaces.",
+      "reference": "SD Manual Ch.5, P.37",
+      "image": null
+    },
+    {
+      "id": 59,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a white sign with red letters typically indicate?",
+      "options": [
+        "Warning",
+        "Regulatory information",
+        "Construction",
+        "Services"
+      ],
+      "correct": 1,
+      "explanation": "White signs with red letters are regulatory signs that indicate traffic laws and regulations.",
+      "reference": "SD Manual Ch.3, P.28",
+      "image": null
+    },
+    {
+      "id": 60,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What should you do when you hear a siren but cannot see the emergency vehicle?",
+      "options": [
+        "Continue driving normally",
+        "Speed up",
+        "Pull over and stop",
+        "Turn up your radio"
+      ],
+      "correct": 2,
+      "explanation": "When you hear a siren but cannot see the emergency vehicle, pull over and stop until you can determine where it is.",
+      "reference": "SD Manual Ch.7, P.63",
+      "image": null
+    },
+    {
+      "id": 61,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "At a three-way intersection where two roads meet a highway, who has the right of way?",
+      "options": [
+        "Traffic on the highway",
+        "Traffic turning right",
+        "Traffic turning left",
+        "First vehicle to arrive"
+      ],
+      "correct": 0,
+      "explanation": "Traffic on the highway (through traffic) has the right of way over traffic entering from side roads.",
+      "reference": "SD Manual Ch.4, P.33",
+      "image": null
+    },
+    {
+      "id": 62,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When driving in snow, you should:",
+      "options": [
+        "Use cruise control",
+        "Brake hard to stop quickly",
+        "Increase following distance",
+        "Drive at normal speed"
+      ],
+      "correct": 2,
+      "explanation": "In snow conditions, increase your following distance to allow more time and space to stop safely.",
+      "reference": "SD Manual Ch.7, P.69",
+      "image": null
+    },
+    {
+      "id": 63,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What does a sign with a bicycle symbol mean?",
+      "options": [
+        "No bicycles allowed",
+        "Bicycle crossing",
+        "Bicycle lane or path",
+        "Bicycle repair shop"
+      ],
+      "correct": 2,
+      "explanation": "A sign with a bicycle symbol indicates a bicycle lane, path, or area designated for bicycle use.",
+      "reference": "SD Manual Ch.3, P.29",
+      "image": null
+    },
+    {
+      "id": 64,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the maximum fine for littering from a vehicle?",
+      "options": [
+        "$50",
+        "$100",
+        "$200",
+        "$500"
+      ],
+      "correct": 3,
+      "explanation": "Littering from a vehicle can result in fines up to $500, depending on the amount and type of litter.",
+      "reference": "SD Manual Ch.8, P.73",
+      "image": null
+    },
+    {
+      "id": 65,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "When can you enter an intersection?",
+      "options": [
+        "When the light turns green",
+        "When you can clear it completely",
+        "When other cars are moving",
+        "Anytime if you're turning right"
+      ],
+      "correct": 1,
+      "explanation": "Only enter an intersection when you can clear it completely. Don't block the intersection even if you have a green light.",
+      "reference": "SD Manual Ch.4, P.34",
+      "image": null
+    },
+    {
+      "id": 66,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "How long can you park in a loading zone?",
+      "options": [
+        "5 minutes",
+        "15 minutes",
+        "30 minutes",
+        "Only while actively loading"
+      ],
+      "correct": 3,
+      "explanation": "You can only park in a loading zone while actively loading or unloading goods or passengers.",
+      "reference": "SD Manual Ch.6, P.53",
+      "image": null
+    },
+    {
+      "id": 67,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the speed limit when passing a school bus with flashing red lights?",
+      "options": [
+        "15 mph",
+        "20 mph",
+        "You must stop completely",
+        "25 mph"
+      ],
+      "correct": 2,
+      "explanation": "When a school bus has flashing red lights, you must stop completely until the lights stop flashing and the bus moves.",
+      "reference": "SD Manual Ch.5, P.38",
+      "image": null
+    },
+    {
+      "id": 68,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a sign showing a truck on a steep grade mean?",
+      "options": [
+        "No trucks allowed",
+        "Truck route",
+        "Steep hill ahead",
+        "Truck stop ahead"
+      ],
+      "correct": 2,
+      "explanation": "A sign showing a truck on a steep grade warns drivers of a steep hill or grade ahead.",
+      "reference": "SD Manual Ch.3, P.30",
+      "image": null
+    },
+    {
+      "id": 69,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "How should you react to an emergency vehicle approaching from the opposite direction?",
+      "options": [
+        "Pull over to the right",
+        "Continue driving normally",
+        "Pull over to the left",
+        "Stop in your lane"
+      ],
+      "correct": 0,
+      "explanation": "Even when an emergency vehicle approaches from the opposite direction, pull over to the right to give them maximum room.",
+      "reference": "SD Manual Ch.7, P.64",
+      "image": null
+    },
+    {
+      "id": 70,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "Who has the right of way in a parking lot?",
+      "options": [
+        "Vehicles in the driving lanes",
+        "Vehicles backing out",
+        "Pedestrians",
+        "The largest vehicle"
+      ],
+      "correct": 2,
+      "explanation": "Pedestrians always have the right of way in parking lots. Drivers must yield to pedestrians at all times.",
+      "reference": "SD Manual Ch.4, P.37",
+      "image": null
+    },
+    {
+      "id": 71,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What should you do if you experience a tire blowout while driving?",
+      "options": [
+        "Brake immediately",
+        "Grip the wheel firmly and gradually slow down",
+        "Turn sharply to the shoulder",
+        "Accelerate to maintain control"
+      ],
+      "correct": 1,
+      "explanation": "During a tire blowout, grip the steering wheel firmly, keep the vehicle straight, and gradually slow down before pulling over.",
+      "reference": "SD Manual Ch.7, P.70",
+      "image": null
+    },
+    {
+      "id": 72,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a sign with arrows pointing in opposite directions mean?",
+      "options": [
+        "Two-way traffic",
+        "Divided highway",
+        "No passing zone",
+        "Lane change required"
+      ],
+      "correct": 0,
+      "explanation": "A sign with arrows pointing in opposite directions indicates two-way traffic ahead.",
+      "reference": "SD Manual Ch.3, P.31",
+      "image": null
+    },
+    {
+      "id": 73,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "When must you have your headlights on?",
+      "options": [
+        "Only at night",
+        "From sunset to sunrise",
+        "From 30 minutes after sunset to 30 minutes before sunrise",
+        "Whenever it's dark"
+      ],
+      "correct": 2,
+      "explanation": "Headlights must be on from 30 minutes after sunset to 30 minutes before sunrise, and during any time of reduced visibility.",
+      "reference": "SD Manual Ch.8, P.74",
+      "image": null
+    },
+    {
+      "id": 74,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What should you do if traffic lights are not working at an intersection?",
+      "options": [
+        "Proceed normally",
+        "Treat it as a four-way stop",
+        "Yield to traffic from the right only",
+        "The main road has right of way"
+      ],
+      "correct": 1,
+      "explanation": "When traffic lights are not working, treat the intersection as a four-way stop with all vehicles stopping and proceeding in turn.",
+      "reference": "SD Manual Ch.4, P.35",
+      "image": null
+    },
+    {
+      "id": 75,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "When parking downhill without a curb, you should:",
+      "options": [
+        "Turn wheels to the right",
+        "Turn wheels to the left",
+        "Leave wheels straight",
+        "Turn wheels toward the road"
+      ],
+      "correct": 0,
+      "explanation": "When parking downhill without a curb, turn your wheels to the right so the vehicle will roll away from traffic if it moves.",
+      "reference": "SD Manual Ch.6, P.54",
       "image": null
     }
   ]

@@ -258,21 +258,30 @@ class StateManager {
       Math.round((this.state.progress.categories[category].correct /
                  this.state.progress.categories[category].total) * 100);
 
-    // Update weak areas
-    if (!correct && this.state.progress.categories[category].accuracy < 70) {
-      if (!this.state.progress.weakAreas.includes(category)) {
-        this.state.progress.weakAreas.push(category);
-      }
-    } else if (correct && this.state.progress.categories[category].accuracy >= 85) {
-      // Remove from weak areas if improved
-      const index = this.state.progress.weakAreas.indexOf(category);
-      if (index > -1) {
-        this.state.progress.weakAreas.splice(index, 1);
-      }
+    // Update weak areas (more responsive - only need 3 questions to identify)
+    const categoryData = this.state.progress.categories[category];
 
-      // Add to mastered topics
-      if (!this.state.progress.masteredTopics.includes(category)) {
-        this.state.progress.masteredTopics.push(category);
+    if (categoryData.total >= 3) {
+      if (categoryData.accuracy < 70) {
+        if (!this.state.progress.weakAreas.includes(category)) {
+          this.state.progress.weakAreas.push(category);
+          console.log(`Added ${category} to weak areas (${categoryData.accuracy}% accuracy)`);
+        }
+      } else if (categoryData.accuracy >= 80) {
+        // Remove from weak areas if improved
+        const index = this.state.progress.weakAreas.indexOf(category);
+        if (index > -1) {
+          this.state.progress.weakAreas.splice(index, 1);
+          console.log(`Removed ${category} from weak areas (improved to ${categoryData.accuracy}%)`);
+        }
+
+        // Add to mastered topics if accuracy is very high
+        if (categoryData.accuracy >= 90 && categoryData.total >= 5) {
+          if (!this.state.progress.masteredTopics.includes(category)) {
+            this.state.progress.masteredTopics.push(category);
+            console.log(`Added ${category} to mastered topics (${categoryData.accuracy}% accuracy)`);
+          }
+        }
       }
     }
 

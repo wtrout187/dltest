@@ -209,7 +209,7 @@ class QuestionManager {
     ];
   }
 
-  // Get questions for study session
+  // Get questions for study session with better variety
   getStudyQuestions(count = 10, category = null, difficulty = null) {
     let availableQuestions = [...this.questions];
 
@@ -223,11 +223,59 @@ class QuestionManager {
       availableQuestions = availableQuestions.filter(q => q.difficulty === difficulty);
     }
 
-    // Shuffle questions
-    availableQuestions = this.shuffleArray(availableQuestions);
+    // If no specific filters, ensure variety across categories and difficulties
+    if (!category && !difficulty) {
+      availableQuestions = this.getVariedQuestions(count);
+    } else {
+      // Shuffle questions
+      availableQuestions = this.shuffleArray(availableQuestions);
+    }
 
     // Return requested count
     return availableQuestions.slice(0, count);
+  }
+
+  // Get varied questions across categories and difficulties
+  getVariedQuestions(count) {
+    const categories = this.getCategories();
+    const difficulties = ['easy', 'medium', 'hard'];
+    const questionsPerCategory = Math.ceil(count / categories.length);
+    const selectedQuestions = [];
+
+    // Get questions from each category
+    categories.forEach(category => {
+      const categoryQuestions = this.questions.filter(q => q.category === category);
+
+      // Get mix of difficulties within category
+      const easyQuestions = categoryQuestions.filter(q => q.difficulty === 'easy');
+      const mediumQuestions = categoryQuestions.filter(q => q.difficulty === 'medium');
+      const hardQuestions = categoryQuestions.filter(q => q.difficulty === 'hard');
+
+      const categorySelection = [];
+
+      // Add one from each difficulty if available
+      if (easyQuestions.length > 0) {
+        categorySelection.push(easyQuestions[Math.floor(Math.random() * easyQuestions.length)]);
+      }
+      if (mediumQuestions.length > 0) {
+        categorySelection.push(mediumQuestions[Math.floor(Math.random() * mediumQuestions.length)]);
+      }
+      if (hardQuestions.length > 0) {
+        categorySelection.push(hardQuestions[Math.floor(Math.random() * hardQuestions.length)]);
+      }
+
+      // Fill remaining slots randomly from category
+      while (categorySelection.length < questionsPerCategory && categorySelection.length < categoryQuestions.length) {
+        const remaining = categoryQuestions.filter(q => !categorySelection.includes(q));
+        if (remaining.length === 0) break;
+        categorySelection.push(remaining[Math.floor(Math.random() * remaining.length)]);
+      }
+
+      selectedQuestions.push(...categorySelection);
+    });
+
+    // Shuffle final selection
+    return this.shuffleArray(selectedQuestions);
   }
 
   // Get questions for mock test (25 questions, mixed categories)
@@ -467,12 +515,31 @@ class QuestionManager {
 
   // End session
   endSession() {
+    const sessionData = window.State?.getSessionData();
+
     if (window.State) {
       window.State.endSession();
     }
 
-    // Show results or return to home
+    // Show session summary
+    if (sessionData && sessionData.totalQuestions > 0) {
+      const accuracy = Math.round((sessionData.correctAnswers / sessionData.totalQuestions) * 100);
+      const message = `Session Complete!\n${sessionData.correctAnswers}/${sessionData.totalQuestions} correct (${accuracy}%)\n+${sessionData.correctAnswers * 10} XP earned!`;
+
+      if (window.app) {
+        window.app.showNotification(message, 'success', 4000);
+      }
+    }
+
+    // Update home screen data
     if (window.app) {
+      // Refresh user data on home screen
+      const userData = window.State?.getUserData();
+      if (userData) {
+        window.app.updateUserInfo(userData);
+      }
+
+      // Show home screen
       window.app.showScreen('home');
     }
 
