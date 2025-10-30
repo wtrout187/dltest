@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="South Dakota Driver's License Test Prep App for Christian Trout"
+    />
+    <meta name="theme-color" content="#00d4ff" />
+    <title>🚗 SD Driv License Test Prep</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Initialize theme immediately -->
+    <script>
+      const savedTheme = localStorage.getItem("dltest_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        🌙
+      </button>
+
+      <!-- Navigation -->
+      <nav class="nav-bar">
+        <div class="nav-container">
+          <button class="nav-toggle" id="navToggle">☰</button>
+          <h1 class="nav-title">🚗 DL Test Prep</h1>
+          <button class="nav-settings" id="navSettings">⚙️</button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main id="mainContent" class="main-content">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+          <div class="user-info">
+            <div class="user-avatar">🎯</div>
+            <h2 id="userName">Christian</h2>
+            <div class="user-stats">
+              <span id="userLevel">🏆 Level 1</span>
+              <span id="userXP">⭐ 0 XP</span>
+            </div>
+            <div class="xp-progress">
+              <div class="progress-bar">
+                <div
+                  id="xpProgressBar"
+                  class="progress-fill"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="xpProgressText">0%</span>
+            </div>
+          </div>
+
+          <div class="streak-info">
+            <span id="streakDisplay">🔥 0 Day Streak</span>
+          </div>
+
+          <div class="readiness-card">
+            <h3>🎯 Readiness Score</h3>
+            <div class="readiness-score" id="readinessScore">0/100</div>
+            <div class="progress-bar">
+              <div
+                id="readinessProgressBar"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p id="readinessMessage">🚀 Start practicing!</p>
+          </div>
+
+          <div class="quick-actions">
+            <h3>⚡ Quick Actions</h3>
+            <div class="action-grid">
+              <button class="action-btn" id="studyModeBtn">
+                <span class="action-icon">🧠</span>
+                <span class="action-text">Study Mode</span>
+              </button>
+              <button class="action-btn" id="mockTestBtn">
+                <span class="action-icon">⚡</span>
+                <span class="action-text">Mock Test</span>
+              </button>
+              <button class="action-btn" id="weakAreasBtn">
+                <span class="action-icon">🎯</span>
+                <span class="action-text">Weak Areas</span>
+              </button>
+              <button class="action-btn" id="roadSignsBtn">
+                <span class="action-icon">🚦</span>
+                <span class="action-text">Road Signs</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="achievements-preview">
+            <h3>🏆 Recent Achievements</h3>
+            <div class="achievement-badges" id="achievementBadges">
+              <div class="badge locked">🏆</div>
+              <div class="badge locked">🏆</div>
+              <div class="badge locked">🔒</div>
+              <div class="badge locked">🔒</div>
+              <div class="badge locked">🔒</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Study Mode Screen -->
+        <div id="studyScreen" class="screen">
+          <div class="study-header">
+            <button class="back-btn" id="studyBackBtn">←</button>
+            <span class="study-title">🧠 Study Mode</span>
+            <span class="question-counter" id="questionCounter">1/10</span>
+          </div>
+
+          <div class="question-container">
+            <div
+              class="question-image"
+              id="questionImage"
+              style="display: none"
+            >
+              <img id="questionImg" src="" alt="Question image" />
+            </div>
+
+            <div class="question-text" id="questionText">
+              Loading question...
+            </div>
+
+            <div class="answer-options" id="answerOptions">
+              <!-- Answer buttons will be generated here -->
+            </div>
+          </div>
+
+          <div
+            class="feedback-container"
+            id="feedbackContainer"
+            style="display: none"
+          >
+            <div class="feedback-header" id="feedbackHeader">
+              ✓ Correct! +10 XP
+            </div>
+            <div class="feedback-content">
+              <div class="correct-answer" id="correctAnswer">
+                Correct Answer: A) Stop completely
+              </div>
+              <div class="explanation" id="explanation">
+                A stop sign requires you to come to a complete stop...
+              </div>
+              <div class="reference" id="reference">
+                Reference: SD Manual Ch.3, P.15
+              </div>
+            </div>
+            <button class="next-btn" id="nextQuestionBtn">Next Question</button>
+          </div>
+        </div>
+
+        <!-- Progress Screen -->
+        <div id="progressScreen" class="screen">
+          <div class="progress-header">
+            <button class="back-btn" id="progressBackBtn">←</button>
+            <span class="progress-title">📊 Progress</span>
+          </div>
+
+          <div class="overall-stats">
+            <h3>📈 Overall Stats</h3>
+            <div class="stat-grid">
+              <div class="stat-item">
+                <span class="stat-label">Questions</span>
+                <span class="stat-value" id="totalQuestions">0</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Accuracy</span>
+                <span class="stat-value" id="overallAccuracy">0%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Streak</span>
+                <span class="stat-value" id="currentStreak">0 days 🔥</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Simple Theme Toggle Script -->
+    <script>
+      // Immediate theme toggle functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("themeToggle");
+
+        // Initialize theme display
+        function updateThemeToggle() {
+          const theme =
+            document.documentElement.getAttribute("data-theme") || "dark";
+          if (themeToggle) {
+            themeToggle.textContent = theme === "light" ? "🌙" : "☀️";
+            themeToggle.title = `Switch to ${
+              theme === "light" ? "dark" : "light"
+            } theme`;
+          }
+        }
+
+        updateThemeToggle();
+
+        // Theme toggle click handler
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            const currentTheme =
+              document.documentElement.getAttribute("data-theme") || "dark";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+
+            console.log("Switching theme from", currentTheme, "to", newTheme);
+
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("dltest_theme", newTheme);
+            updateThemeToggle();
+          });
+        }
+      });
+    </script>
+
+    <!-- Load app modules -->
+    <script src="js/storage.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

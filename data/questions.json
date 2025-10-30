@@ -1,0 +1,443 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-12-08",
+  "totalQuestions": 25,
+  "categories": [
+    "traffic-signs",
+    "right-of-way",
+    "speed-limits",
+    "parking",
+    "driving-laws",
+    "safe-driving",
+    "intersections",
+    "emergency-vehicles",
+    "road-signs"
+  ],
+  "questions"
+ {
+      "id": 1,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a red octagonal sign mean?",
+      "options": [
+        "Yield to oncoming traffic",
+        "Stop completely",
+        "Slow down",
+        "No entry"
+      ],
+      "correct": 1,
+      "explanation": "A red octagonal sign is a stop sign, which means you must come to a complete stop.",
+      "reference": "SD Manual Ch.3, P.15",
+      "image": null
+    },
+    {
+      "id": 2,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "At a four-way stop, who has the right of way?",
+      "options": [
+        "The largest vehicle",
+        "The vehicle that arrived first",
+        "The vehicle on the right",
+        "The vehicle going straight"
+      ],
+      "correct": 1,
+      "explanation": "At a four-way stop, the vehicle that arrives first has the right of way. If vehicles arrive simultaneously, the vehicle on the right has the right of way.",
+      "reference": "SD Manual Ch.4, P.22",
+      "image": null
+    },
+    {
+      "id": 3,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What is the speed limit in a school zone when children are present?",
+      "options": [
+        "15 mph",
+        "20 mph",
+        "25 mph",
+        "30 mph"
+      ],
+      "correct": 1,
+      "explanation": "The speed limit in school zones is typically 20 mph when children are present or during school hours.",
+      "reference": "SD Manual Ch.5, P.31",
+      "image": null
+    },
+    {
+      "id": 4,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "How far from a fire hydrant must you park?",
+      "options": [
+        "5 feet",
+        "10 feet",
+        "15 feet",
+        "20 feet"
+      ],
+      "correct": 2,
+      "explanation": "You must park at least 15 feet away from a fire hydrant to ensure emergency access.",
+      "reference": "SD Manual Ch.6, P.45",
+      "image": null
+    },
+    {
+      "id": 5,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What does a yellow diamond-shaped sign typically indicate?",
+      "options": [
+        "Construction zone",
+        "Warning or caution",
+        "No parking",
+        "Speed limit"
+      ],
+      "correct": 1,
+      "explanation": "Yellow diamond-shaped signs are warning signs that alert drivers to potential hazards or changes in road conditions.",
+      "reference": "SD Manual Ch.3, P.18",
+      "image": null
+    },
+    {
+      "id": 6,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the legal blood alcohol content (BAC) limit for drivers under 21?",
+      "options": [
+        "0.00%",
+        "0.02%",
+        "0.05%",
+        "0.08%"
+      ],
+      "correct": 1,
+      "explanation": "South Dakota has a zero-tolerance policy for drivers under 21. Any detectable amount of alcohol (0.02% BAC or higher) is illegal.",
+      "reference": "SD Manual Ch.8, P.67",
+      "image": null
+    },
+    {
+      "id": 7,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a triangular red and white sign mean?",
+      "options": [
+        "Stop",
+        "Yield",
+        "Do not enter",
+        "Wrong way"
+      ],
+      "correct": 1,
+      "explanation": "A triangular red and white sign is a yield sign, meaning you must slow down and give the right of way to other traffic.",
+      "reference": "SD Manual Ch.3, P.16",
+      "image": null
+    },
+    {
+      "id": 8,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the recommended following distance in good weather conditions?",
+      "options": [
+        "1 second",
+        "2 seconds",
+        "3 seconds",
+        "4 seconds"
+      ],
+      "correct": 2,
+      "explanation": "The 3-second rule is recommended for following distance in good weather conditions. This gives you enough time to react and stop safely.",
+      "reference": "SD Manual Ch.7, P.52",
+      "image": null
+    },
+    {
+      "id": 9,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When making a left turn at an intersection with a green light, you should:",
+      "options": [
+        "Turn immediately",
+        "Yield to oncoming traffic",
+        "Wait for the arrow",
+        "Honk your horn"
+      ],
+      "correct": 1,
+      "explanation": "When making a left turn on a green light (not a green arrow), you must yield to oncoming traffic and pedestrians.",
+      "reference": "SD Manual Ch.4, P.28",
+      "image": null
+    },
+    {
+      "id": 10,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "When you see an emergency vehicle with flashing lights behind you, you should:",
+      "options": [
+        "Speed up",
+        "Pull over to the right and stop",
+        "Continue at the same speed",
+        "Pull over to the left"
+      ],
+      "correct": 1,
+      "explanation": "When an emergency vehicle approaches with lights and sirens, pull over to the right side of the road and come to a complete stop.",
+      "reference": "SD Manual Ch.7, P.58",
+      "image": null
+    },
+    {
+      "id": 11,
+      "category": "traffic-signs",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does a circular sign with a red border and diagonal line mean?",
+      "options": [
+        "Warning",
+        "Information",
+        "Prohibition (not allowed)",
+        "Construction zone"
+      ],
+      "correct": 2,
+      "explanation": "Circular signs with red borders and diagonal lines are prohibition signs, indicating something is not allowed.",
+      "reference": "SD Manual Ch.3, P.20",
+      "image": null
+    },
+    {
+      "id": 12,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the maximum speed limit on South Dakota interstate highways?",
+      "options": [
+        "70 mph",
+        "75 mph",
+        "80 mph",
+        "85 mph"
+      ],
+      "correct": 2,
+      "explanation": "The maximum speed limit on South Dakota interstate highways is 80 mph, unless otherwise posted.",
+      "reference": "SD Manual Ch.5, P.33",
+      "image": null
+    },
+    {
+      "id": 13,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "You cannot park within how many feet of a crosswalk?",
+      "options": [
+        "10 feet",
+        "15 feet",
+        "20 feet",
+        "25 feet"
+      ],
+      "correct": 2,
+      "explanation": "You cannot park within 20 feet of a crosswalk to ensure pedestrian visibility and safety.",
+      "reference": "SD Manual Ch.6, P.47",
+      "image": null
+    },
+    {
+      "id": 14,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When entering a highway from an on-ramp, you should:",
+      "options": [
+        "Stop and wait for an opening",
+        "Merge at any speed",
+        "Accelerate to match traffic speed",
+        "Use your hazard lights"
+      ],
+      "correct": 2,
+      "explanation": "When entering a highway, accelerate to match the speed of traffic and merge safely when there's an adequate gap.",
+      "reference": "SD Manual Ch.4, P.35",
+      "image": null
+    },
+    {
+      "id": 15,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "In wet weather conditions, you should increase your following distance to:",
+      "options": [
+        "3 seconds",
+        "4 seconds",
+        "5 seconds",
+        "6 seconds"
+      ],
+      "correct": 2,
+      "explanation": "In wet conditions, increase your following distance to at least 5 seconds to account for reduced traction and longer stopping distances.",
+      "reference": "SD Manual Ch.7, P.54",
+      "image": null
+    },
+    {
+      "id": 16,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "Using a handheld cell phone while driving is:",
+      "options": [
+        "Always legal",
+        "Legal only for emergencies",
+        "Illegal for all drivers",
+        "Legal only for adults"
+      ],
+      "correct": 2,
+      "explanation": "Using a handheld cell phone while driving is illegal for all drivers in South Dakota.",
+      "reference": "SD Manual Ch.8, P.72",
+      "image": null
+    },
+    {
+      "id": 17,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "At a roundabout, you should:",
+      "options": [
+        "Stop before entering",
+        "Yield to traffic in the roundabout",
+        "Speed up to merge quickly",
+        "Use your left turn signal"
+      ],
+      "correct": 1,
+      "explanation": "When entering a roundabout, yield to traffic already in the roundabout and enter when there's a safe gap.",
+      "reference": "SD Manual Ch.4, P.30",
+      "image": null
+    },
+    {
+      "id": 18,
+      "category": "road-signs",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "A rectangular white sign with black text typically indicates:",
+      "options": [
+        "Warning",
+        "Regulatory information",
+        "Construction",
+        "Tourist information"
+      ],
+      "correct": 1,
+      "explanation": "Rectangular white signs with black text are regulatory signs that tell you about traffic laws and regulations.",
+      "reference": "SD Manual Ch.3, P.19",
+      "image": null
+    },
+    {
+      "id": 19,
+      "category": "emergency-vehicles",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When stopped for an emergency vehicle, you should remain stopped until:",
+      "options": [
+        "The vehicle passes",
+        "The lights turn off",
+        "The vehicle is out of sight",
+        "Other traffic starts moving"
+      ],
+      "correct": 0,
+      "explanation": "Remain stopped until the emergency vehicle has completely passed and it's safe to proceed.",
+      "reference": "SD Manual Ch.7, P.59",
+      "image": null
+    },
+    {
+      "id": 20,
+      "category": "safe-driving",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "When driving in fog, you should:",
+      "options": [
+        "Use high beam headlights",
+        "Use low beam headlights",
+        "Use hazard lights",
+        "Turn off all lights"
+      ],
+      "correct": 1,
+      "explanation": "In fog, use low beam headlights. High beams reflect off the fog and reduce visibility.",
+      "reference": "SD Manual Ch.7, P.61",
+      "image": null
+    },
+    {
+      "id": 21,
+      "category": "parking",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "When parking on a hill with a curb, you should:",
+      "options": [
+        "Always turn wheels toward the curb",
+        "Always turn wheels away from the curb",
+        "Turn wheels toward curb when facing downhill",
+        "Leave wheels straight"
+      ],
+      "correct": 2,
+      "explanation": "When parking downhill with a curb, turn wheels toward the curb. When parking uphill, turn wheels away from the curb.",
+      "reference": "SD Manual Ch.6, P.49",
+      "image": null
+    },
+    {
+      "id": 22,
+      "category": "speed-limits",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "In residential areas, the speed limit is typically:",
+      "options": [
+        "20 mph",
+        "25 mph",
+        "30 mph",
+        "35 mph"
+      ],
+      "correct": 1,
+      "explanation": "In residential areas, the typical speed limit is 25 mph unless otherwise posted.",
+      "reference": "SD Manual Ch.5, P.32",
+      "image": null
+    },
+    {
+      "id": 23,
+      "category": "right-of-way",
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "Pedestrians in a crosswalk have the right of way:",
+      "options": [
+        "Only at traffic lights",
+        "Only in school zones",
+        "At all marked crosswalks",
+        "Never"
+      ],
+      "correct": 2,
+      "explanation": "Pedestrians have the right of way at all marked crosswalks, whether controlled by signals or not.",
+      "reference": "SD Manual Ch.4, P.25",
+      "image": null
+    },
+    {
+      "id": 24,
+      "category": "driving-laws",
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "If you are involved in an accident, you must report it to police if:",
+      "options": [
+        "Anyone is injured",
+        "Damage exceeds $2,000",
+        "Both A and B",
+        "Only if someone dies"
+      ],
+      "correct": 2,
+      "explanation": "You must report an accident to police if anyone is injured or if property damage exceeds $2,000.",
+      "reference": "SD Manual Ch.8, P.75",
+      "image": null
+    },
+    {
+      "id": 25,
+      "category": "intersections",
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "A flashing red light at an intersection means:",
+      "options": [
+        "Proceed with caution",
+        "Treat it as a stop sign",
+        "Yield to cross traffic",
+        "Speed up to clear the intersection"
+      ],
+      "correct": 1,
+      "explanation": "A flashing red light should be treated as a stop sign - come to a complete stop and proceed when safe.",
+      "reference": "SD Manual Ch.4, P.27",
+      "image": null
+    }
+  ]
+}

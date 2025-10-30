@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Test</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Initialize theme immediately -->
+    <script>
+      const savedTheme = localStorage.getItem("dltest_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      🌙
+    </button>
+
+    <div style="padding: 2rem; max-width: 600px; margin: 0 auto">
+      <h1 style="color: var(--text); text-align: center">🚗 Theme Test</h1>
+
+      <div class="user-info">
+        <div class="user-avatar">🎯</div>
+        <h2>Christian</h2>
+        <div class="user-stats">
+          <span>🏆 Level 5</span>
+          <span>⭐ 487 XP</span>
+        </div>
+      </div>
+
+      <div class="readiness-card">
+        <h3>🎯 Readiness Score</h3>
+        <div class="readiness-score">82/100</div>
+        <p>🚀 Almost ready! Keep practicing!</p>
+      </div>
+
+      <div class="quick-actions">
+        <h3>⚡ Quick Actions</h3>
+        <div class="action-grid">
+          <button class="action-btn">
+            <span class="action-icon">🧠</span>
+            <span class="action-text">Study Mode</span>
+          </button>
+          <button class="action-btn">
+            <span class="action-icon">⚡</span>
+            <span class="action-text">Mock Test</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 2rem;
+          color: var(--text-secondary);
+        "
+      >
+        <p>Click the theme toggle (🌙/☀️) in the top-right to switch themes!</p>
+        <p>Current theme: <span id="currentTheme">dark</span></p>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const currentThemeDisplay = document.getElementById("currentTheme");
+
+      // Update theme display
+      function updateThemeDisplay() {
+        const theme =
+          document.documentElement.getAttribute("data-theme") || "dark";
+        currentThemeDisplay.textContent = theme;
+        themeToggle.textContent = theme === "light" ? "🌙" : "☀️";
+        themeToggle.title = `Switch to ${
+          theme === "light" ? "dark" : "light"
+        } theme`;
+      }
+
+      // Initialize display
+      updateThemeDisplay();
+
+      // Toggle theme
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme") || "dark";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("dltest_theme", newTheme);
+        updateThemeDisplay();
+
+        console.log("Theme switched to:", newTheme);
+      });
+    </script>
+  </body>
+</html>
