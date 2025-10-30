@@ -407,6 +407,8 @@ class DLTestApp {
     const welcomeScreen = document.getElementById('welcomeScreen');
     if (welcomeScreen) {
       welcomeScreen.style.display = 'flex';
+      // Prevent body scrolling on mobile
+      document.body.classList.add('welcome-active');
 
       // Setup welcome screen buttons
       const startLearning = document.getElementById('startLearning');
@@ -416,6 +418,7 @@ class DLTestApp {
         startLearning.addEventListener('click', () => {
           localStorage.setItem('dltest_visited', 'true');
           welcomeScreen.style.display = 'none';
+          document.body.classList.remove('welcome-active');
           const mainContent = document.getElementById('mainContent');
           if (mainContent) mainContent.style.display = 'block';
           this.showScreen('home');
@@ -551,6 +554,7 @@ class DLTestApp {
       localStorage.setItem('dltest_visited', 'true');
       const welcomeScreen = document.getElementById('welcomeScreen');
       if (welcomeScreen) welcomeScreen.style.display = 'none';
+      document.body.classList.remove('welcome-active');
       const mainContent = document.getElementById('mainContent');
       if (mainContent) mainContent.style.display = 'block';
       closeModal();
@@ -654,6 +658,7 @@ class DLTestApp {
     localStorage.setItem('dltest_visited', 'true');
     const welcomeScreen = document.getElementById('welcomeScreen');
     if (welcomeScreen) welcomeScreen.style.display = 'none';
+    document.body.classList.remove('welcome-active');
     const mainContent = document.getElementById('mainContent');
     if (mainContent) mainContent.style.display = 'block';
     this.showScreen('home');
