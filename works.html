@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This Works</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #0a0a0a;
+        color: white;
+      }
+      button {
+        padding: 20px 40px;
+        font-size: 20px;
+        background: #00d4ff;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 10px;
+      }
+      button:hover {
+        background: #00b8e6;
+      }
+      #status {
+        background: #1a1a1a;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 12px;
+        border: 2px solid #00d4ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🚗 SD Driver's License Test Prep</h1>
+    <h2>Simple Working Version</h2>
+
+    <div id="status">
+      <h3>Status:</h3>
+      <p>XP: <span id="xp">0</span></p>
+      <p>Level: <span id="level">1</span></p>
+      <p>Questions: <span id="questions">0</span></p>
+    </div>
+
+    <button onclick="answerCorrect()">✅ Answer Correct (+10 XP)</button>
+    <button onclick="answerWrong()">❌ Answer Wrong</button>
+    <button onclick="reset()">🔄 Reset</button>
+
+    <script>
+      // Simple state
+      let xp = 0;
+      let level = 1;
+      let totalQuestions = 0;
+      let correctAnswers = 0;
+
+      function calculateLevel(xp) {
+        return Math.floor(Math.sqrt(xp / 100)) + 1;
+      }
+
+      function updateDisplay() {
+        document.getElementById("xp").textContent = xp;
+        document.getElementById("level").textContent = level;
+        document.getElementById("questions").textContent = totalQuestions;
+      }
+
+      function answerCorrect() {
+        totalQuestions++;
+        correctAnswers++;
+        xp += 10;
+        level = calculateLevel(xp);
+        updateDisplay();
+        console.log("✅ Correct! XP:", xp, "Level:", level);
+      }
+
+      function answerWrong() {
+        totalQuestions++;
+        updateDisplay();
+        console.log("❌ Wrong! Questions:", totalQuestions);
+      }
+
+      function reset() {
+        xp = 0;
+        level = 1;
+        totalQuestions = 0;
+        correctAnswers = 0;
+        updateDisplay();
+        console.log("🔄 Reset");
+      }
+
+      console.log("✅ App loaded and working!");
+    </script>
+  </body>
+</html>
