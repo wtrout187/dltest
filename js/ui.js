@@ -26,7 +26,7 @@ class UIManager {
 
   initializeTheme() {
     // Get saved theme or default to dark
-    const savedTlocalStorage.getItem('dltest_theme') || 'dark';
+    const savedTheme = localStorage.getItem('dltest_theme') || 'dark';
     this.setTheme(savedTheme);
   }
 

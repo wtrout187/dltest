@@ -14,8 +14,8 @@ class StorageManager {
       return true;
     } catch (e) {
       console.warn('localStorage not available, using memory backup');
-      retu
-   }
+      return false;
+    }
   }
 
   async init() {
