@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Questions Loading</title>
+  </head>
+  <body>
+    <h1>Testing Question Loading</h1>
+    <div id="result"></div>
+
+    <script>
+      async function testQuestionLoading() {
+        const resultDiv = document.getElementById("result");
+
+        try {
+          console.log("Attempting to fetch questions...");
+          const response = await fetch("data/questions.json");
+          console.log("Response status:", response.status);
+          console.log("Response ok:", response.ok);
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log("Questions loaded:", data.questions?.length);
+            resultDiv.innerHTML = `
+                        <p>✅ Success! Loaded ${
+                          data.questions?.length || 0
+                        } questions</p>
+                        <p>Total categories: ${data.categories?.length || 0}</p>
+                        <p>First question: ${
+                          data.questions?.[0]?.question || "None"
+                        }</p>
+                    `;
+          } else {
+            resultDiv.innerHTML = `<p>❌ Failed to load: ${response.status} ${response.statusText}</p>`;
+          }
+        } catch (error) {
+          console.error("Error loading questions:", error);
+          resultDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
+        }
+      }
+
+      testQuestionLoading();
+    </script>
+  </body>
+</html>

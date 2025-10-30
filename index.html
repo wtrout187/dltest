@@ -34,9 +34,71 @@
         <div class="nav-container">
           <button class="nav-toggle" id="navToggle">☰</button>
           <h1 class="nav-title">🚗 DL Test Prep</h1>
-          <button class="nav-settings" id="navSettings">⚙️</button>
+          <div class="nav-actions">
+            <button class="nav-help" id="navHelp" title="Help & Instructions">
+              ❓
+            </button>
+            <button class="nav-settings" id="navSettings" title="Settings">
+              ⚙️
+            </button>
+          </div>
         </div>
       </nav>
+
+      <!-- Welcome Screen (First Time) -->
+      <div id="welcomeScreen" class="welcome-screen" style="display: none">
+        <div class="welcome-content">
+          <div class="welcome-header">
+            <div class="welcome-icon">🎉</div>
+            <h1>Welcome Christian!</h1>
+            <p>Your dad built this awesome app just for you!</p>
+            <div class="dad-message">
+              <div class="message-bubble">
+                <p>
+                  💙 "Hey buddy! I made this special app to help you ace your
+                  driver's test. It's got everything you need - games,
+                  achievements, and smart learning. I'm so proud of you for
+                  taking this step toward independence. You've got this! - Dad"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="welcome-features">
+            <div class="feature-item">
+              <div class="feature-icon">🎮</div>
+              <h3>Gamified Learning</h3>
+              <p>Earn XP, unlock achievements, and level up as you study!</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🧠</div>
+              <h3>Smart AI Learning</h3>
+              <p>
+                The app learns your weak areas and focuses on what you need!
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📱</div>
+              <h3>Works Everywhere</h3>
+              <p>Study on your phone, tablet, or computer - progress syncs!</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📧</div>
+              <h3>Parent Updates</h3>
+              <p>Dad gets progress reports so he can cheer you on!</p>
+            </div>
+          </div>
+
+          <div class="welcome-actions">
+            <button class="welcome-btn primary" id="startLearning">
+              🚀 Start Learning!
+            </button>
+            <button class="welcome-btn secondary" id="showInstructions">
+              📖 How It Works
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- Main Content -->
       <main id="mainContent" class="main-content">

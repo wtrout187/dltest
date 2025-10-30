@@ -459,31 +459,98 @@ class GameSystem {
       style.remove();
     }, 3000);
 
-    // Play achievement sound (if available)
+    // Play achievement sound and show celebration
     this.playAchievementSound();
+    this.showCelebration();
   }
 
   playAchievementSound() {
-    // Create a simple achievement sound using Web Audio API
+    // Create a more impressive achievement sound
     try {
       const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
 
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      // Create multiple oscillators for a richer sound
+      const createTone = (freq, startTime, duration) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
 
-      oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
-      oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
-      oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
 
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+        oscillator.frequency.setValueAtTime(freq, startTime);
+        gainNode.gain.setValueAtTime(0.2, startTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
 
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.5);
+        oscillator.start(startTime);
+        oscillator.stop(startTime + duration);
+      };
+
+      // Play a triumphant chord progression
+      const now = audioContext.currentTime;
+      createTone(523.25, now, 0.3); // C5
+      createTone(659.25, now + 0.1, 0.3); // E5
+      createTone(783.99, now + 0.2, 0.3); // G5
+      createTone(1046.50, now + 0.3, 0.4); // C6
+
+      // Add haptic feedback on mobile
+      if (navigator.vibrate) {
+        navigator.vibrate([100, 50, 100, 50, 200]);
+      }
+
     } catch (error) {
       // Silently fail if Web Audio API is not supported
+    }
+  }
+
+  showCelebration() {
+    // Create confetti effect
+    const colors = ['#00d4ff', '#ff6b6b', '#4ecdc4', '#ffd43b', '#51cf66'];
+    const confettiCount = 50;
+
+    for (let i = 0; i < confettiCount; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: fixed;
+          width: 10px;
+          height: 10px;
+          background: ${colors[Math.floor(Math.random() * colors.length)]};
+          top: -10px;
+          left: ${Math.random() * 100}vw;
+          z-index: 10000;
+          border-radius: 50%;
+          pointer-events: none;
+          animation: confettiFall ${2 + Math.random() * 3}s linear forwards;
+        `;
+
+        document.body.appendChild(confetti);
+
+        // Remove after animation
+        setTimeout(() => {
+          if (confetti.parentNode) {
+            confetti.parentNode.removeChild(confetti);
+          }
+        }, 5000);
+      }, i * 50);
+    }
+
+    // Add confetti animation if not already added
+    if (!document.getElementById('confetti-styles')) {
+      const style = document.createElement('style');
+      style.id = 'confetti-styles';
+      style.textContent = `
+        @keyframes confettiFall {
+          0% {
+            transform: translateY(-10px) rotate(0deg);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
     }
   }
 

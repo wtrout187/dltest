@@ -57,27 +57,40 @@ class StateManager {
   async loadState() {
     try {
       if (window.Storage) {
+        console.log('📂 Loading saved state...');
+
         const userData = await window.Storage.get('userData');
         const progress = await window.Storage.get('progress');
         const settings = await window.Storage.get('settings');
 
+        console.log('📊 Loaded data:', { userData, progress, settings });
+
         if (userData) {
           this.state.user = { ...this.state.user, ...userData };
+          console.log('✅ User data loaded:', this.state.user);
+        } else {
+          console.log('ℹ️ No saved user data found, using defaults');
         }
 
         if (progress) {
           this.state.progress = { ...this.state.progress, ...progress };
+          console.log('✅ Progress data loaded:', this.state.progress);
+        } else {
+          console.log('ℹ️ No saved progress data found, using defaults');
         }
 
         if (settings) {
           this.state.ui.theme = settings.theme || 'dark';
+          console.log('✅ Settings loaded:', settings);
         }
 
         // Emit loaded event
         this.emit('state:loaded', this.state);
+      } else {
+        console.error('❌ Storage not available for loading state!');
       }
     } catch (error) {
-      console.error('Error loading state:', error);
+      console.error('❌ Error loading state:', error);
     }
   }
 
@@ -96,6 +109,14 @@ class StateManager {
   async saveState() {
     try {
       if (window.Storage) {
+        console.log('💾 Saving state:', {
+          totalQuestions: this.state.user.totalQuestions,
+          correctAnswers: this.state.user.correctAnswers,
+          xp: this.state.user.xp,
+          level: this.state.user.level,
+          streak: this.state.user.streak
+        });
+
         await window.Storage.set('userData', this.state.user);
         await window.Storage.set('progress', this.state.progress);
         await window.Storage.set('settings', {
@@ -103,9 +124,13 @@ class StateManager {
           notifications: true,
           parentEmail: 'wtrout@hotmail.com'
         });
+
+        console.log('✅ State saved successfully');
+      } else {
+        console.error('❌ Storage not available!');
       }
     } catch (error) {
-      console.error('Error saving state:', error);
+      console.error('❌ Error saving state:', error);
     }
   }
 
@@ -231,6 +256,8 @@ class StateManager {
   }
 
   answerQuestion(correct, category = 'general') {
+    console.log('🔄 State.answerQuestion called:', { correct, category });
+
     this.state.user.totalQuestions++;
     this.state.session.totalQuestions++;
 
@@ -238,7 +265,16 @@ class StateManager {
       this.state.user.correctAnswers++;
       this.state.session.correctAnswers++;
       this.addXP(10); // 10 XP per correct answer
+      console.log('✅ Correct answer! Added 10 XP');
+    } else {
+      console.log('❌ Incorrect answer');
     }
+
+    console.log('📊 Updated totals:', {
+      totalQuestions: this.state.user.totalQuestions,
+      correctAnswers: this.state.user.correctAnswers,
+      xp: this.state.user.xp
+    });
 
     // Update category progress
     if (!this.state.progress.categories[category]) {
@@ -293,6 +329,11 @@ class StateManager {
       accuracy: Math.round((this.state.user.correctAnswers / this.state.user.totalQuestions) * 100)
     });
 
+    // Update UI immediately
+    if (window.app) {
+      window.app.updateUserInfo(this.state.user);
+    }
+
     this.saveState();
   }
 
@@ -319,17 +360,30 @@ class StateManager {
     const today = new Date().toDateString();
     const lastStudyDate = this.state.user.lastStudyDate;
 
+    console.log('📅 Streak calculation:', { today, lastStudyDate, currentStreak: this.state.user.streak });
+
     if (lastStudyDate !== today) {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayString = yesterday.toDateString();
 
-      if (lastStudyDate === yesterday.toDateString()) {
+      if (lastStudyDate === yesterdayString) {
+        // Consecutive day - increment streak
         this.state.user.streak++;
-      } else if (lastStudyDate !== today) {
+        console.log('🔥 Streak continued! New streak:', this.state.user.streak);
+      } else if (!lastStudyDate) {
+        // First time studying
         this.state.user.streak = 1;
+        console.log('🎯 First study session! Streak started:', this.state.user.streak);
+      } else {
+        // Gap in studying - reset streak
+        this.state.user.streak = 1;
+        console.log('💔 Streak broken! Reset to 1');
       }
 
       this.state.user.lastStudyDate = today;
+    } else {
+      console.log('📚 Already studied today, streak unchanged:', this.state.user.streak);
     }
 
     // Calculate readiness score

@@ -67,6 +67,14 @@ class UIManager {
         this.showSettings();
       });
     }
+
+    // Help button
+    const navHelp = document.getElementById('navHelp');
+    if (navHelp) {
+      navHelp.addEventListener('click', () => {
+        this.showHelp();
+      });
+    }
   }
 
   setupScreenTransitions() {
@@ -578,6 +586,12 @@ class UIManager {
         bar.style.width = targetWidth;
       }, 100);
     });
+  }
+
+  showHelp() {
+    if (window.app) {
+      window.app.showInstructions();
+    }
   }
 
   // Utility methods
