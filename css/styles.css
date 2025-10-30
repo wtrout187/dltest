@@ -1003,7 +1003,7 @@ input:focus-visible {
 /* Question Container Styles */
 .question-container {
   background: var(--gradient-surface);
-  border-radr(--border-radius-lg);
+  border-radius: var(--border-radius-lg);
   padding: 2rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow);
