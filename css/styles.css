@@ -483,6 +483,42 @@ body::after {
   display: block;
 }
 
+/* Study Screen Styles */
+.study-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--gradient-surface);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.study-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.study-xp, .study-level {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.study-xp {
+  color: var(--primary);
+}
+
+.study-level {
+  color: var(--success);
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;

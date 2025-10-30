@@ -205,6 +205,25 @@
           <div class="study-header">
             <button class="back-btn" id="studyBackBtn">←</button>
             <span class="study-title">🧠 Study Mode</span>
+            <div class="study-stats">
+              <span class="study-xp" id="studyXP">⭐ 0 XP</span>
+              <span class="study-level" id="studyLevel">🏆 Level 1</span>
+              <button
+                onclick="window.app?.debugState()"
+                style="
+                  background: none;
+                  border: 1px solid var(--border);
+                  color: var(--text);
+                  padding: 0.25rem 0.5rem;
+                  border-radius: 4px;
+                  font-size: 0.8rem;
+                  cursor: pointer;
+                "
+                title="Debug"
+              >
+                🐛
+              </button>
+            </div>
             <span class="question-counter" id="questionCounter">1/10</span>
           </div>
 

@@ -2,7 +2,7 @@
 class DLTestApp {
   constructor() {
     this.currentScreen = 'home';
-    this.isInitializese;
+    this.isInitialized = false;
     this.version = '1.0.0';
   }
 
@@ -158,7 +158,13 @@ class DLTestApp {
   }
 
   updateUserInfo(userData) {
-    console.log('🔄 updateUserInfo called with:', userData);
+    console.log('🔄 updateUserInfo called with:', {
+      totalQuestions: userData.totalQuestions,
+      correctAnswers: userData.correctAnswers,
+      xp: userData.xp,
+      level: userData.level,
+      streak: userData.streak
+    });
 
     const userName = document.getElementById('userName');
     const userLevel = document.getElementById('userLevel');
@@ -178,6 +184,12 @@ class DLTestApp {
     if (userLevel) userLevel.textContent = `🏆 Level ${userData.level || 1}`;
     if (userXP) userXP.textContent = `⭐ ${userData.xp || 0} XP`;
     if (streakDisplay) streakDisplay.textContent = `🔥 ${userData.streak || 0} Day Streak`;
+
+    // Also update study screen elements if they exist
+    const studyXP = document.getElementById('studyXP');
+    const studyLevel = document.getElementById('studyLevel');
+    if (studyXP) studyXP.textContent = `⭐ ${userData.xp || 0} XP`;
+    if (studyLevel) studyLevel.textContent = `🏆 Level ${userData.level || 1}`;
 
     console.log('✅ UI updated with values:', {
       level: userData.level,

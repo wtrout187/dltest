@@ -273,7 +273,8 @@ class StateManager {
     console.log('📊 Updated totals:', {
       totalQuestions: this.state.user.totalQuestions,
       correctAnswers: this.state.user.correctAnswers,
-      xp: this.state.user.xp
+      xp: this.state.user.xp,
+      level: this.state.user.level
     });
 
     // Update category progress
