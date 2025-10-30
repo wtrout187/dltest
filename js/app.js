@@ -29,6 +29,8 @@ class DLTestApp {
       if (isFirstTime) {
         this.showWelcomeScreen();
       } else {
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) mainContent.style.display = 'block';
         this.showScreen('home');
       }
 
@@ -414,6 +416,8 @@ class DLTestApp {
         startLearning.addEventListener('click', () => {
           localStorage.setItem('dltest_visited', 'true');
           welcomeScreen.style.display = 'none';
+          const mainContent = document.getElementById('mainContent');
+          if (mainContent) mainContent.style.display = 'block';
           this.showScreen('home');
           this.showNotification('🎉 Welcome to your personalized driver\'s test prep! Let\'s get you ready for that license!', 'success', 6000);
         });
@@ -547,6 +551,8 @@ class DLTestApp {
       localStorage.setItem('dltest_visited', 'true');
       const welcomeScreen = document.getElementById('welcomeScreen');
       if (welcomeScreen) welcomeScreen.style.display = 'none';
+      const mainContent = document.getElementById('mainContent');
+      if (mainContent) mainContent.style.display = 'block';
       closeModal();
       this.showScreen('home');
       this.showNotification('🎉 You\'re all set! Start with Study Mode to begin earning XP!', 'success', 5000);
@@ -642,6 +648,17 @@ class DLTestApp {
     console.log('Session:', window.State?.getSessionData());
     console.log('==================');
   }
+
+  // Force skip welcome screen (for debugging)
+  skipWelcome() {
+    localStorage.setItem('dltest_visited', 'true');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    if (welcomeScreen) welcomeScreen.style.display = 'none';
+    const mainContent = document.getElementById('mainContent');
+    if (mainContent) mainContent.style.display = 'block';
+    this.showScreen('home');
+    console.log('✅ Welcome screen skipped');
+  }
 }
 
 // Initialize app when DOM is loaded
@@ -651,6 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add debug methods to window for testing
   window.debugApp = () => window.app.debugState();
+  window.skipWelcome = () => window.app.skipWelcome();
   window.testScoring = () => {
     console.log('🧪 Testing scoring system...');
     if (window.State) {
@@ -671,6 +689,12 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('❌ State not available for testing');
     }
   };
+
+  // Log initialization complete
+  console.log('🎉 App ready! Available debug commands:');
+  console.log('  - skipWelcome() - Skip the welcome screen');
+  console.log('  - debugApp() - Show current app state');
+  console.log('  - testScoring() - Test the scoring system');
 });
 
 // Export for use in other modules
