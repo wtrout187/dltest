@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quick Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #0a0a0a;
+        color: white;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .correct {
+        background: green;
+        color: white;
+      }
+      .wrong {
+        background: red;
+        color: white;
+      }
+      .info {
+        background: blue;
+        color: white;
+      }
+      #status {
+        background: #333;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 Quick Scoring Test</h1>
+
+    <div id="status">
+      <h3>Current Status:</h3>
+      <div>XP: <span id="xp">0</span></div>
+      <div>Level: <span id="level">1</span></div>
+      <div>Total Questions: <span id="total">0</span></div>
+      <div>Correct: <span id="correct">0</span></div>
+      <div>Weak Areas: <span id="weak">0</span></div>
+    </div>
+
+    <button class="correct" onclick="testCorrect()">✅ Answer Correct</button>
+    <button class="wrong" onclick="testWrong()">❌ Answer Wrong</button>
+    <button class="info" onclick="showState()">📊 Show State</button>
+    <button class="info" onclick="resetAll()">🔄 Reset</button>
+
+    <!-- Load all scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+      let initialized = false;
+
+      async function init() {
+        console.log("🚀 Initializing test...");
+
+        try {
+          if (window.Storage) await window.Storage.init();
+          if (window.State) window.State.init();
+          if (window.Questions) await window.Questions.loadQuestions();
+          if (window.Game) window.Game.init();
+          if (window.Progress) window.Progress.init();
+
+          initialized = true;
+          console.log("✅ Test initialized");
+          updateDisplay();
+        } catch (error) {
+          console.error("❌ Init failed:", error);
+        }
+      }
+
+      function testCorrect() {
+        if (!initialized) {
+          alert("Not initialized yet!");
+          return;
+        }
+
+        console.log("🧪 Testing correct answer...");
+        if (window.State) {
+          window.State.answerQuestion(true, "traffic-signs");
+          updateDisplay();
+        } else {
+          console.error("❌ State not available!");
+        }
+      }
+
+      function testWrong() {
+        if (!initialized) {
+          alert("Not initialized yet!");
+          return;
+        }
+
+        console.log("🧪 Testing wrong answer...");
+        if (window.State) {
+          window.State.answerQuestion(false, "traffic-signs");
+          updateDisplay();
+        } else {
+          console.error("❌ State not available!");
+        }
+      }
+
+      function updateDisplay() {
+        if (!window.State) return;
+
+        const userData = window.State.getUserData();
+        const progress = window.State.getProgress();
+
+        document.getElementById("xp").textContent = userData.xp || 0;
+        document.getElementById("level").textContent = userData.level || 1;
+        document.getElementById("total").textContent =
+          userData.totalQuestions || 0;
+        document.getElementById("correct").textContent =
+          userData.correctAnswers || 0;
+        document.getElementById("weak").textContent =
+          progress.weakAreas?.length || 0;
+      }
+
+      function showState() {
+        if (!window.State) {
+          console.error("❌ State not available!");
+          return;
+        }
+
+        const userData = window.State.getUserData();
+        const progress = window.State.getProgress();
+
+        console.log("📊 Current State:", {
+          userData,
+          progress,
+          categories: progress.categories,
+        });
+      }
+
+      function resetAll() {
+        if (window.State) {
+          window.State.resetProgress();
+          updateDisplay();
+          console.log("🔄 Reset complete");
+        }
+      }
+
+      // Initialize on load
+      window.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>

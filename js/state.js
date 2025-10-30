@@ -2,7 +2,7 @@
 class StateManager {
   constructor() {
     this.state = {
-      user{
+      user: {
         name: 'Christian',
         level: 1,
         xp: 0,
